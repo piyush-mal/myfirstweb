@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>iEducation- online education platform</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+      <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0px 10px 100px;
+}
+
+.navlist {
+  width: 70%;
+
+  display: flex;
+
+  align-items: center;
+
+  align-items: center;
+}
+
+.navlist li {
+  list-style: none;
+  padding: 26px 30px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navlist li a:hover {
+  color: rgb(6, 238, 242);
+}
+
+.rightnav {
+  width: 30%;
+  padding: 0px 14px;
+
+  text-align: right;
+}
+
+#logo {
+  height: 100px;
+}
+
+#search {
+  padding: 6px;
+  font-size: 20px;
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+
+.background {
+  background: rgba(0, 0, 0, 0.7)
+    url("https://www.affordablebackgroundchecks.com/blog/wp-content/uploads/2019/06/Online-Education-Background-Check-Legitimacy.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+  width: 100%;
+}
+
+/* logo enimation css */
+#logo svg {
+  justify-content: center;
+  align-items: center;
+  padding: 4% 9%;
+  display: flex;
+  font: 10.5em "Montserrat";
+  width: 270px;
+  height: 87px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 8px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #1aff00;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #ff0040;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #28056d;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #0bd0efdd;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+/* enimation end */
+
+.boxmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 68%;
+  margin: auto;
+  height: 100%;
+}
+
+.firstsection {
+  height: 400px;
+}
+
+.firsthalf {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sechalf {
+  width: 30%;
+}
+
+.sechalf img {
+  border: 2px solid white;
+  border-radius: 100px;
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 192px;
+}
+
+.textbig {
+  font-size: 40px;
+}
+
+.textsmall {
+  font-size: 18px;
+}
+
+.btn {
+  margin: 15px 5px;
+  padding: 11px 21px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(109, 233, 244);
+  color: rgb(25, 24, 24);
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  vertical-align: middle;
+}
+.btnm {
+  border: 1px solid black;
+  font-family: "Ubuntu", sans-serif;
+  display: block;
+  margin: auto;
+  color: gray;
+  font-size: 17px;
+  font-weight: 500;
+}
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: auto;
+  font-family: "Ubuntu", sans-serif;
+  padding: 0px 18px;
+}
+.paras {
+  padding: 0px 65px;
+}
+.left {
+  flex-direction: row-reverse;
+}
+.sectionsubtag {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.imagefluid {
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-top: 19px;
+}
+.contact {
+  background-color: #bccddd;
+  width: 100%;
+  height: 570px;
+}
+.text-center {
+  text-align: center;
+  padding: 15px 0px;
+  font-family: "Ubuntu", sans-serif;
+}
+.form {
+  margin: 25px auto;
+  max-width: 62%;
+}
+.form-input {
+  margin: 14px 0;
+  width: 100%;
+  border: 2px solid wheat;
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 19px;
+}
+.text-area {
+  margin: 5px 201px;
+  width: 100%;
+  padding: 2px 36px;
+  border-radius: 8px;
+  font-size: 19px;
+}
+
+.fto {
+  height: 100px;
+  margin-top: 44px;
+  color: darkgrey;
+  font-size: 25px;
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#srcbar {
+  border: none;
+  outline: none;
+  width: 385px;
+  height: 40px;
+  font-size: 16px;
+  background: transparent;
+  font-family: sans-serif;
+  text-align: center;
+}
+.srcwapper {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+}
+.burger {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 15px;
+  cursor: pointer;
+}
+.line {
+  width: 33px;
+  background-color: white;
+  height: 5px;
+  margin: 5px;
+}
+/* media query */
+@media only screen and (max-width: 1100px) {
+  .navlist {
+    flex-direction: column;
+  }
+  .navbar {
+    flex-direction: column;
+    transition: all 0.7s ease-out;
+    height: 450px;
+  }
+  #srcbar {
+    width: 100%;
+        font-size: 12px;
+    text-align: justify;
+  }
+  .rightnav {
+    text-align: center;
+  }
+  .burger {
+    display: block;
+  }
+  .h-nav-resp {
+    height: 72px;
+  }
+  .v-class-resp {
+    opacity: 0;
+  }
+  .boxmain {
+    flex-direction: column-reverse;
+    max-width: 100%;
+  }
+  .section {
+    flex-direction: column-reverse;
+  }
+  .textbig {
+    text-align: center;
+    font-size: 25px;
+  }
+  .textsmall {
+    text-align: center;
+    font-size: 15px;
+  }
+  .button {
+    text-align: center;
+  }
+  .sechalf {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .sechalf img {
+    width: 150px;
+    height: 152px;
+  }
+  .fto {
+    height: 60px;
+    font-size: 15px;
+  }
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+    <nav class="navbar background h-nav-resp">
+      <ul class="navlist another v-class-resp">
+        <div id="logo">
+          <svg viewBox="0 0 960 300">
+            <symbol id="s-text">
+              <text
+                text-anchor="middle"
+                x="40%"
+                y="60%"
+                style="font-weight: 900"
+              >
+                I-education
+              </text>
+            </symbol>
+
+            <g class="g-ants">
+              <use xlink:href="#s-text" class="text-copy"></use>
+              <use xlink:href="#s-text" class="text-copy"></use>
+              <use xlink:href="#s-text" class="text-copy"></use>
+              <use xlink:href="#s-text" class="text-copy"></use>
+              <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+          </svg>
+        </div>
+        <li><a href="#HOME">HOME</a></li>
+        <li><a href="#ABOUT">ABOUT</a></li>
+        <li><a href="#SERVICE">SERVICE</a></li>
+        <li><a href="#CONTACT">CONTACT</a></li>
+      </ul>
+      <div class="rightnav v-class-resp">
+        <div class="srcwapper">
+          <i
+            class="fa-sharp fa-solid fa-magnifying-glass"
+            style="padding: 10px"
+          ></i>
+          <input type="text" id="srcbar" placeholder="Content Search" />
+        </div>
+      </div>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <section class="background firstsection">
+      <div class="boxmain">
+        <div class="firsthalf">
+          <p class="textbig">The future of education is here</p>
+          <p class="textsmall">
+            i education is web Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Atque, numquam. Vero amet eum hic, omnis
+            consequatur officia ex, rem quia ut, odit quod. Voluptatum, nihil
+            cum deserunt veniam .
+          </p>
+          <div class="button">
+            <button class="btn">subscribe</button>
+            <button class="btn">watch video</button>
+          </div>
+        </div>
+        <div class="sechalf">
+          <img
+            src="https://www.myperfectresume.com/wp-content/uploads/2020/05/describe-your-educational-background-768x512.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="paras">
+        <p class="sectiontag textbig">The end of your search here</p>
+        <br />
+        <p class="sectionsubtag textsmall">
+          Education is a purposeful activity directed at achieving certain aims,
+          such as transmitting knowledge or fostering skills and character
+          traits. These aims may include the development of understanding,
+          rationality, kindness, and honesty. Various researchers emphasize the
+          role of critical thinking in order to distinguish education from
+          indoctrination.
+        </p>
+      </div>
+      <div class="thumb">
+        <img
+          class="imagefluid"
+          src="https://wallpaperaccess.com/full/958467.jpg"
+          alt=""
+          style="width: 300px"
+        />
+      </div>
+    </section>
+    <hr />
+
+    <section class="section left">
+      <div class="paras">
+        <p class="sectiontag textbig">Transform Education in india</p>
+        <br />
+        <p class="sectionsubtag textsmall">
+          Some theorists require that education results in an improvement of the
+          student while others prefer a value-neutral definition of the term. In
+          a slightly different sense, education may also refer, not to the
+          process, but to the product of this process: the mental states and
+          dispositions possessed by educated people. .
+        </p>
+      </div>
+      <div class="thumb">
+        <img
+          class="imagefluid"
+          src="https://wallpaperaccess.com/full/958467.jpg"
+          alt=""
+          style="width: 300px"
+        />
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="section">
+      <div class="paras">
+        <p class="sectiontag textbig">structured by curricular aims</p>
+        <br />
+        <p class="sectionsubtag textsmall">
+          Types of education are commonly divided into formal, non-formal, and
+          informal education. Formal education takes place in education and
+          training institutions, is usually structured by curricular aims and
+          objectives, and learning is typically guided by a teacher.
+        </p>
+      </div>
+      <div class="thumb">
+        <img
+          class="imagefluid"
+          src="https://wallpaperaccess.com/full/958467.jpg"
+          alt=""
+          style="width: 300px"
+        />
+      </div>
+    </section>
+    <hr />
+    <section class="contact">
+      
+    
+        <h2 class="text-center">Contact US</h2>
+        <div class="form">
+          <input class="form-input"
+            type="text"
+            name="name"
+            id=""
+            placeholder="Enter Your Name"
+            required
+          />
+        </div>
+        <div class="form">
+          <input class="form-input"
+            type="text"
+            name="number"
+            placeholder="Enter Your Mobile Number"
+            required
+          />
+        </div>
+        <div class="form">
+          <input class="form-input"
+            type="text"
+            name="Email"
+            placeholder="Enter Your Email"
+            required
+          />
+        </div>
+        <div class="form">
+          <textarea class="form-input"
+            name="text"
+            id="text"
+            cols="100"
+            rows="5"
+            placeholder="Elaborate Your Concern "
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-sm btnm">Submit</button>
+      </form>
+    </section>
+    <hr />
+    <br />
+    <div>
+      <footer class="fto background ">
+        Copyright; &copy; 2027 iEducate.com - All Right Reserved
+      </footer>
+    </div>
+    <script>
+      burger = document.querySelector(".burger");
+      navbar = document.querySelector(".navbar");
+      rightnav = document.querySelector(".rightnav");
+      navlist = document.querySelector(".navlist");
+
+      burger.addEventListener("click", () => {
+        rightnav.classList.toggle("v-class-resp");
+        navlist.classList.toggle("v-class-resp");
+        navbar.classList.toggle("h-nav-resp");
+      });
+    </script>
+  </body>
+</html>
